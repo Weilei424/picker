@@ -25,12 +25,16 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void deleteItem(Long userId, Long itemId) {
+    public void deleteUserItem(Long userId, Long itemId) {
 
     }
 
     @Override
-    public Item updateItem(Long userId, Long itemId, String newName) {
+    public void deleteItem(Long itemId) {
+
+    }
+    @Override
+    public Item updateItem(Long userId, Long itemId, Item item) {
         return null;
     }
 
