@@ -21,6 +21,6 @@ public class Item {
     @NotBlank(message = "Item name cannot be blank")
     private String name;
 
-    @Column(name = "own_by")
+    @ManyToOne
     private User user;
 }

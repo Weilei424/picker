@@ -24,13 +24,7 @@ public class User {
     @NotBlank
     private String username;
 
-    @JsonIgnore
-    @OneToMany
-    @JoinTable(
-            name = "user_item",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "item_id", referencedColumnName = "id")
-    )
+    @OneToMany(mappedBy = "user")
     private Set<Item> items;
 
 }
