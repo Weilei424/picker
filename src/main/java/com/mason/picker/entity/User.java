@@ -24,7 +24,7 @@ public class User {
     @NotBlank
     private String username;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Item> items;
 
 }

@@ -21,6 +21,7 @@ public class Item {
     @NotBlank(message = "Item name cannot be blank")
     private String name;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 }
