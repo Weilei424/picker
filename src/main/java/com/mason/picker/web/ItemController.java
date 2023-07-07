@@ -37,7 +37,7 @@ public class ItemController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping("/update/{itemId}")
+    @PutMapping("/update/{userId}/{itemId}")
     public ResponseEntity<Item> updateItem(@PathVariable Long userId, @PathVariable Long itemId, @RequestBody String itemName) {
         itemService.updateItem(userId, itemId, itemName);
         return new ResponseEntity<>(itemService.getItem(itemId), HttpStatus.OK);
