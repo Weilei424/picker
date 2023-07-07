@@ -28,18 +28,21 @@ public class ItemController {
     @DeleteMapping("/delete/{userId}/{itemId}")
     public ResponseEntity<HttpStatus> deleteUserItem(@PathVariable Long userId, @PathVariable Long itemId) {
         itemService.deleteUserItem(userId, itemId);
+
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteItem(@PathVariable Long id) {
         itemService.deleteItem(id);
+
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @PutMapping("/update/{userId}/{itemId}")
     public ResponseEntity<Item> updateItem(@PathVariable Long userId, @PathVariable Long itemId, @RequestBody String itemName) {
         itemService.updateItem(userId, itemId, itemName);
+
         return new ResponseEntity<>(itemService.getItem(itemId), HttpStatus.OK);
     }
 
