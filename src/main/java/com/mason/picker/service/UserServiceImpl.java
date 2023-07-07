@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Service
-public class UserServerImpl implements UserService {
+public class UserServiceImpl implements UserService {
     UserRepository userRepository;
 
     @Override
