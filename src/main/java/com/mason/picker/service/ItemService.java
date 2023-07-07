@@ -9,7 +9,7 @@ public interface ItemService {
     Item saveItem(Item item);
     void deleteUserItem(Long userId, Long itemId);
     void deleteItem(Long itemId);
-    Item updateItem(Long userId, Long itemId, Item item);
+    Item updateItem(Long userId, Long itemId, String itemName);
     List<Item> getItems();
     List<Item> getUserItems(Long userId);
 }
