@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Service
@@ -14,21 +16,21 @@ public class UserServerImpl implements UserService {
 
     @Override
     public User getUser(Long id) {
-        return null;
+        return userRepository.findById(id).get();
     }
 
     @Override
     public User saveUser(User user) {
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
     public void deleteUser(Long id) {
-
+        userRepository.deleteById(id);
     }
 
     @Override
-    public User updateUser(Long id, User user) {
-        return null;
+    public List<User> getUsers() {
+        return (List<User>) userRepository.findAll();
     }
 }
