@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ItemRepository extends CrudRepository<Item, Long> {
-    Optional<Item> findByUserIdAndItemId(Long userId, Long ItemId);
-    @Transactional
-    void deleteByUserIdAndItemId(Long userId, Long ItemId);
     List<Item> findByUserId(Long userId);
+
 }
