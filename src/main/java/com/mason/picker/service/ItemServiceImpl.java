@@ -65,6 +65,12 @@ public class ItemServiceImpl implements ItemService {
         return itemRepository.findByUserId(userId);
     }
 
+    @Override
+    public Item getRandomItemFromUser(Long userId) {
+        return null;
+    }
+
+
     private static Item unwrapItem(Optional<Item> entity, Long userId) {
         if (entity.isPresent()) return entity.get();
         else throw new ItemNotFoundException(userId);

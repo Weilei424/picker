@@ -13,4 +13,5 @@ public interface ItemService {
     Item updateItem(Long userId, Long itemId, String itemName);
     List<Item> getItems();
     List<Item> getUserItems(Long userId);
+    Item getRandomItemFromUser(Long userId);
 }
