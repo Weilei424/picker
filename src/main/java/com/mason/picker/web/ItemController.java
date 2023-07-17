@@ -25,7 +25,7 @@ public class ItemController {
         return new ResponseEntity<>(itemService.saveItem(userId, itemId, item), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/delete/{userId}/{itemId}")
+    @DeleteMapping("/{userId}/{itemId}")
     public ResponseEntity<HttpStatus> deleteUserItem(@PathVariable Long userId, @PathVariable Long itemId) {
         itemService.deleteUserItem(userId, itemId);
 
