@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
     UserRepository userRepository;
