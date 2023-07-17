@@ -20,9 +20,9 @@ public class ItemController {
         return new ResponseEntity<>(itemService.getItem(id), HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<Item> saveItem(@RequestBody Item item) {
-        return new ResponseEntity<>(itemService.saveItem(item), HttpStatus.CREATED);
+    @PostMapping("/{itemId}/user/{userId}")
+    public ResponseEntity<Item> saveItem(@PathVariable Long userId, @PathVariable Long itemId, @RequestBody Item item) {
+        return new ResponseEntity<>(itemService.saveItem(userId, itemId, item), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{userId}/{itemId}")
