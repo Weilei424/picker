@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface ItemService {
     Item getItem(Long itemId);
-    Item saveItem(Item item);
+    Item saveItem(Long userId, Long itemId, Item item);
     void deleteItem(Long itemId);
     void deleteUserItem(Long userId, Long itemId);
     Item updateItem(Long userId, Long itemId, String itemName);
