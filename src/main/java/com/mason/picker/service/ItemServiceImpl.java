@@ -73,7 +73,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public Item getRandomItemFromUser(Long userId) {
-        return null;
+        List<Item> items = getUserItems(userId);
+        int size = items.size();
+        return items.get((int) (Math.random() * size));
     }
 
 
