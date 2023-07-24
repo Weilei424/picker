@@ -15,7 +15,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
     UserService userService;
 
@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @ApiResponse(responseCode = "201", description = "Successful creation of user")
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<User> saveUser(@RequestBody User user) {
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
@@ -41,7 +41,7 @@ public class UserController {
 
     @ApiResponse(responseCode = "200", description = "Successful creation of users",
             content = @Content(array = @ArraySchema(schema = @Schema(implementation = User.class))))
-    @GetMapping("/users")
+    @GetMapping("/all")
     public  ResponseEntity<List<User>> getUsers() {
         return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
     }
