@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ItemService {
-    Item getItem(Long itemId);
-    Item saveItem(Long userId, Long itemId, Item item);
+    Item getItem(Long idd);
+    Item saveItem(Item item);
+    Item saveUserItem(Long userId, Item item);
     void deleteItem(Long itemId);
     void deleteUserItem(Long userId, Long itemId);
     Item updateItem(Long userId, Long itemId, String itemName);
