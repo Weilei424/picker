@@ -1,5 +1,6 @@
 package com.mason.picker.service;
 
+import com.mason.picker.entity.Item;
 import com.mason.picker.entity.User;
 import com.mason.picker.exception.ItemNotFoundException;
 import com.mason.picker.repository.UserRepository;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
     UserRepository userRepository;
+    ItemServiceImpl itemService;
 
     @Override
     public User getUser(Long id) {
@@ -33,6 +35,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUsers() {
         return (List<User>) userRepository.findAll();
+    }
+
+    @Override
+    public Item pickItem(Long id) {
+        return itemService.getRandomItemFromUser(id);
     }
 
     static User unwrapUser(Optional<User> entity, Long userId) {
