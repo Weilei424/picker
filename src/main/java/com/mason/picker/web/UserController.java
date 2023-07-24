@@ -39,7 +39,8 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @ApiResponse(responseCode = "200", description = "Successful creation of users", content = @Content(array = @ArraySchema(schema = @Schema(implementation = User.class))))
+    @ApiResponse(responseCode = "200", description = "Successful creation of users",
+            content = @Content(array = @ArraySchema(schema = @Schema(implementation = User.class))))
     @GetMapping("/users")
     public  ResponseEntity<List<User>> getUsers() {
         return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
