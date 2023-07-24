@@ -1,5 +1,6 @@
 package com.mason.picker.web;
 
+import com.mason.picker.entity.Item;
 import com.mason.picker.entity.User;
 import com.mason.picker.service.UserService;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -42,7 +43,12 @@ public class UserController {
     @ApiResponse(responseCode = "200", description = "Successful creation of users",
             content = @Content(array = @ArraySchema(schema = @Schema(implementation = User.class))))
     @GetMapping("/all")
-    public  ResponseEntity<List<User>> getUsers() {
+    public ResponseEntity<List<User>> getUsers() {
         return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}/pick")
+    public ResponseEntity<Item> pickItem(@PathVariable Long id) {
+        return new ResponseEntity<>(userService.pickItem(id), HttpStatus.OK);
     }
 }
