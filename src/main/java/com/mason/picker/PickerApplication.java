@@ -15,7 +15,7 @@ public class PickerApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		User[] users = new User[]{
-				new User("Adam")
+				new User("Adam", "123")
 		};
 
 
