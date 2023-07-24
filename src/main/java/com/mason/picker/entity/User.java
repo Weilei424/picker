@@ -1,11 +1,11 @@
 package com.mason.picker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import org.springframework.context.annotation.EnableMBeanExport;
 
-import java.util.Set;
+import java.util.List;
 
 @NoArgsConstructor
 @RequiredArgsConstructor
@@ -29,7 +29,8 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private Set<Item> items;
+    private List<Item> items;
 
 }
