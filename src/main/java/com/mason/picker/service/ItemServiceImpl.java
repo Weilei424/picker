@@ -23,13 +23,16 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Item saveItem(Long userId, Long itemId, Item item) {
+    public Item saveItem(Item item) {
+        return itemRepository.save(item);
+    }
+
+    @Override
+    public Item saveUserItem(Long userId, Item item) {
         User user = UserServiceImpl.unwrapUser(userRepository.findById(userId), userId);
         item.setUser(user);
         return itemRepository.save(item);
     }
-
-
 
     @Override
     public void deleteItem(Long itemId) {
